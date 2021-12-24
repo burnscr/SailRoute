@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="model" type="com.example.sailroute.MapsViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:visibility="@{model.primaryVisible ? View.VISIBLE : View.GONE}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:backgroundTint="@color/green_primary"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/primary_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="center"
+                    app:tint="@color/light_text"
+                    app:srcCompat="@drawable/announcement" />
+                <TextView android:id="@+id/primary_direction_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:padding="8dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/light_text"
+                    android:text="@string/no_valid_route"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="@{model.secondaryVisible ? View.VISIBLE : View.GONE}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-8dp"
+            android:backgroundTint="@color/green_secondary"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+            <TextView android:id="@+id/secondary_direction_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/light_text"
+                android:text="@string/no_valid_route" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

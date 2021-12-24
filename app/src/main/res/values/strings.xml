@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Breeze</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="wind_velocity_hint">knots</string>
+    <string name="wind_speed_field">Wind Speed</string>
+    <string name="wind_heading_hint">compass degrees</string>
+    <string name="wind_heading_field">Wind Heading</string>
+    <string name="no_valid_route">No valid route</string>
+    <string name="wind_prompt">Swipe up to configure wind…</string>
+</resources>
